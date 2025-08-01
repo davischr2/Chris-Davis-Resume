@@ -63,19 +63,19 @@ Chris Davis is a distinguished cybersecurity professional with over two decades 
 ## 🎤 **Speaking & Media Expertise**
 
 ### **Featured Appearances**
-- **Bloomberg TV** - Cybersecurity Expert Commentary (2024)
-- **AFS Cybersecurity Summit** - Keynote Speaker (2022)
+- **Bloomberg TV** - Cybersecurity Expert Commentary
+- **AFS Cybersecurity Summit** - Keynote Speaker
 
 ### **Major Conference Presentations**
-- **VMworld** - San Francisco (2023)
-- **RSA Security Conference EMEA** - London (2023)
-- **BlackHat** - Las Vegas (2022)
-- **Cloud Security Alliance** - Dallas (2021)
+- **VMworld** - San Francisco
+- **RSA Security Conference EMEA** - London
+- **BlackHat** - Las Vegas
+- **Cloud Security Alliance** - Dallas
 
 ### **Academic Engagements**
 - Southern Methodist University (SMU)
-- University of Texas at Dallas
-- McCombs School of Business
+- University of Texas at Dallas (UTD)
+- McCombs School of Business (UT Austin)
 
 ---
 

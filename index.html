@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chris Davis | Cybersecurity Leader</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-black: #1a1a1a;
+            --secondary-gray: #4a4a4a;
+            --light-gray: #767676;
+            --border-gray: #e5e5e5;
+            --background-white: #ffffff;
+            --off-white: #f8f8f8;
+            --text-size-base: 16px;
+            --text-size-small: 14px;
+            --text-size-large: 18px;
+            --heading-xl: 48px;
+            --heading-l: 32px;
+            --heading-m: 24px;
+            --heading-s: 20px;
+            --max-width: 1024px;
+            --spacing-xs: 8px;
+            --spacing-s: 16px;
+            --spacing-m: 24px;
+            --spacing-l: 48px;
+            --spacing-xl: 80px;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            font-size: var(--text-size-base);
+            line-height: 1.6;
+            color: var(--primary-black);
+            background-color: var(--background-white);
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Container */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-m);
+        }
+
+        /* Navigation - Top Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--primary-black);
+            z-index: 100;
+            padding: var(--spacing-s) 0;
+        }
+
+        nav .nav-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-m);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            display: flex;
+            align-items: center;
+        }
+
+        nav li:not(:last-child)::after {
+            content: '|';
+            color: var(--light-gray);
+            margin: 0 var(--spacing-m);
+        }
+
+        nav a {
+            color: var(--background-white);
+            text-decoration: none;
+            font-size: var(--text-size-base);
+            font-weight: 500;
+            transition: opacity 0.2s ease;
+            padding: var(--spacing-xs) 0;
+        }
+
+        nav a:hover {
+            opacity: 0.7;
+        }
+
+        /* Main Content Area */
+        .main-content {
+            margin-top: 56px;
+            min-height: 100vh;
+        }
+
+        /* Header Section */
+        header {
+            padding: var(--spacing-xl) 0;
+            background-color: var(--background-white);
+            border-bottom: 1px solid var(--border-gray);
+        }
+
+        header h1 {
+            font-size: var(--heading-xl);
+            font-weight: 700;
+            color: var(--primary-black);
+            margin-bottom: var(--spacing-s);
+            letter-spacing: -0.02em;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: var(--spacing-m);
+            flex-wrap: wrap;
+            margin-top: var(--spacing-m);
+        }
+
+        .contact-info span,
+        .contact-info a {
+            font-size: var(--text-size-base);
+            color: var(--secondary-gray);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--primary-black);
+        }
+
+        /* Download Button */
+        .download-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            padding: var(--spacing-xs) var(--spacing-s);
+            color: var(--primary-black);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: var(--text-size-base);
+            border: 1px solid var(--primary-black);
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .download-link:hover {
+            background-color: var(--primary-black);
+            color: var(--background-white) !important;
+        }
+
+        .download-link svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Sections */
+        section {
+            padding: var(--spacing-xl) 0;
+            border-bottom: 1px solid var(--border-gray);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInSection 0.6s ease forwards;
+        }
+
+        @keyframes fadeInSection {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: var(--heading-l);
+            font-weight: 600;
+            color: var(--primary-black);
+            margin-bottom: var(--spacing-l);
+            letter-spacing: -0.01em;
+        }
+
+        /* Executive Summary */
+        .summary-text {
+            font-size: var(--text-size-large);
+            line-height: 1.8;
+            color: var(--secondary-gray);
+            max-width: 800px;
+        }
+
+        /* Experience Cards */
+        .experience-card {
+            background-color: var(--background-white);
+            border: 1px solid var(--border-gray);
+            border-radius: 8px;
+            padding: var(--spacing-l);
+            margin-bottom: var(--spacing-m);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .experience-card:hover {
+            border-color: var(--primary-black);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: var(--spacing-m);
+            flex-wrap: wrap;
+            gap: var(--spacing-s);
+        }
+
+        .experience-title h3 {
+            font-size: var(--heading-m);
+            font-weight: 600;
+            color: var(--primary-black);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .company-info {
+            font-size: var(--text-size-base);
+            color: var(--secondary-gray);
+            font-weight: 500;
+        }
+
+        .experience-date {
+            font-size: var(--text-size-small);
+            color: var(--light-gray);
+            font-weight: 500;
+            background-color: var(--off-white);
+            padding: var(--spacing-xs) var(--spacing-s);
+            border-radius: 4px;
+        }
+
+        .experience-location {
+            font-size: var(--text-size-small);
+            color: var(--light-gray);
+            margin-top: var(--spacing-xs);
+        }
+
+        .experience-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .experience-content li {
+            position: relative;
+            padding-left: var(--spacing-m);
+            margin-bottom: var(--spacing-s);
+            color: var(--secondary-gray);
+            line-height: 1.8;
+        }
+
+        .experience-content li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 6px;
+            height: 6px;
+            background-color: var(--primary-black);
+            border-radius: 50%;
+        }
+
+        .experience-content li strong {
+            color: var(--primary-black);
+            font-weight: 600;
+        }
+
+        /* Early Career Section */
+        .early-career {
+            background-color: var(--off-white);
+            border-radius: 8px;
+            padding: var(--spacing-l);
+        }
+
+        .early-career h3 {
+            font-size: var(--heading-s);
+            font-weight: 600;
+            color: var(--primary-black);
+            margin-bottom: var(--spacing-m);
+        }
+
+        .early-career ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .early-career li {
+            padding: var(--spacing-s) 0;
+            border-bottom: 1px solid var(--border-gray);
+            color: var(--secondary-gray);
+            line-height: 1.8;
+        }
+
+        .early-career li:last-child {
+            border-bottom: none;
+        }
+
+        .early-career strong {
+            color: var(--primary-black);
+            font-weight: 600;
+        }
+
+        /* Grid Sections */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-m);
+        }
+
+        .grid-item {
+            background-color: var(--off-white);
+            padding: var(--spacing-m);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .grid-item:hover {
+            background-color: var(--background-white);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .grid-item h3 {
+            font-size: var(--text-size-base);
+            font-weight: 600;
+            color: var(--primary-black);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .grid-item p {
+            font-size: var(--text-size-base);
+            color: var(--secondary-gray);
+            line-height: 1.6;
+        }
+
+        /* Certifications List */
+        .certifications-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-s);
+        }
+
+        .certification-item {
+            display: flex;
+            align-items: center;
+            padding: var(--spacing-s);
+            background-color: var(--off-white);
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .certification-item:hover {
+            background-color: var(--background-white);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+        }
+
+        .certification-item::before {
+            content: '✓';
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-color: var(--primary-black);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            margin-right: var(--spacing-s);
+            flex-shrink: 0;
+        }
+
+        /* Thought Leadership */
+        .leadership-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .leadership-list li {
+            position: relative;
+            padding-left: var(--spacing-m);
+            margin-bottom: var(--spacing-s);
+            color: var(--secondary-gray);
+            line-height: 1.8;
+        }
+
+        .leadership-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 6px;
+            height: 6px;
+            background-color: var(--primary-black);
+            border-radius: 50%;
+        }
+
+        .leadership-list strong {
+            color: var(--primary-black);
+            font-weight: 600;
+        }
+
+        .leadership-list a {
+            color: var(--primary-black);
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .leadership-list a:hover {
+            opacity: 0.7;
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            :root {
+                --heading-xl: 36px;
+                --heading-l: 28px;
+                --heading-m: 20px;
+                --heading-s: 18px;
+            }
+
+            nav ul {
+                font-size: var(--text-size-small);
+            }
+
+            nav li:not(:last-child)::after {
+                margin: 0 var(--spacing-s);
+            }
+
+            .container {
+                padding: 0 var(--spacing-s);
+            }
+
+            header {
+                padding: var(--spacing-l) 0;
+            }
+
+            section {
+                padding: var(--spacing-l) 0;
+            }
+
+            .experience-card {
+                padding: var(--spacing-m);
+            }
+
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+
+            .certifications-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav li:not(:last-child)::after {
+                display: none;
+            }
+
+            nav li {
+                margin: 0 var(--spacing-xs);
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            nav,
+            .download-link {
+                display: none;
+            }
+
+            .main-content {
+                margin-top: 0;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <ul>
+                <li><a href="#home">Overview</a></li>
+                <li><a href="#summary">Summary</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#leadership">Leadership</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <!-- Header -->
+            <header id="home">
+                <h1>Chris Davis, MBA, CISSP</h1>
+                <div class="contact-info">
+                    <span>Prosper, Texas</span>
+                    <span>|</span>
+                    <a href="mailto:davischr2@gmail.com">davischr2@gmail.com</a>
+                    <span>|</span>
+                    <a href="https://www.linkedin.com/in/christopherdavis" target="_blank">LinkedIn</a>
+                    <span>|</span>
+                    <a href="2025 Chris Davis Resume.v.01g.pdf" download class="download-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        Download PDF
+                    </a>
+                </div>
+            </header>
+
+            <!-- Executive Summary -->
+            <section id="summary">
+                <h2>Executive Summary</h2>
+                <div class="summary-text">
+                    Cybersecurity, product security, and risk management leader with over 25 years' experience in regulated industries such as financial services, healthcare, and public sector. Known for transforming complex compliance frameworks into actionable engineering requirements, streamlining governance processes, and driving audit readiness. Recognized author, speaker, and executive communicator skilled at aligning technical teams and business leadership. Background in cloud security architecture, governance, and policy optimization for emerging technologies. Actively advancing expertise in AI, quantum computing, and confidential computing to anticipate next-generation risks.
+                </div>
+            </section>
+
+            <!-- Professional Experience -->
+            <section id="experience">
+                <h2>Professional Experience</h2>
+                
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="experience-title">
+                            <h3>AI Cloud Cybersecurity and Compliance Principal Engineer</h3>
+                            <div class="company-info">INTEL</div>
+                            <div class="experience-location">Dallas, TX</div>
+                        </div>
+                        <div class="experience-date">May 2024 – July 2025</div>
+                    </div>
+                    <div class="experience-content">
+                        <ul>
+                            <li><strong>Conducted comprehensive threat model assessments</strong> and vulnerability management for control plane and customer-facing AI cloud applications, identifying critical exposures and mitigating risk</li>
+                            <li><strong>Authored executive-level security documentation</strong> including whitepapers and regulatory compliance reports for C-suite stakeholders and external customer audit requirements for Intel Tiber AI Cloud</li>
+                            <li><strong>Spearheaded SOC 2 Type II attestation and remediation initiatives for Intel Tiber AI Cloud</strong>, successfully managing complex cross-business unit requirements and achieving compliance within accelerated timelines</li>
+                            <li><strong>Streamlined security requirements and SDL (Security Development Lifecycle) processes</strong> by coordinating with legal, engineering, and external counsel for the Intel Tiber AI Cloud</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="experience-title">
+                            <h3>Cloud Cybersecurity and Compliance Principal Engineer - Office of the CTO</h3>
+                            <div class="company-info">VMWARE</div>
+                            <div class="experience-location">Dallas, TX</div>
+                        </div>
+                        <div class="experience-date">January 2021 – January 2024</div>
+                    </div>
+                    <div class="experience-content">
+                        <ul>
+                            <li><strong>Delivered cybersecurity strategy integration</strong> by consolidating 1,800+ security requirements across product development lifecycle down to fewer than 100, enabling engineering teams to meet FedRAMP HIGH, PCI DSSv4, CMMCv2, HIPAA, and SP 800-171r2 standards</li>
+                            <li><strong>Streamlined the Authority to Operate (ATO) process</strong> for customers by translating System Security Plan (SSP) artifacts and Control Correlation Identifier (CCI) requirements into a standardized package for eMASS.</li>
+                            <li><strong>Advanced industry leadership</strong> through standards organizations including INCITS and ISO-IEC</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="experience-title">
+                            <h3>Chief Cloud Cybersecurity and Compliance Architect | Product Management</h3>
+                            <div class="company-info">CAVEONIX</div>
+                            <div class="experience-location">Dallas, TX</div>
+                        </div>
+                        <div class="experience-date">November 2018 – October 2020</div>
+                    </div>
+                    <div class="experience-content">
+                        <ul>
+                            <li><strong>Designed empirical risk assessment methodologies</strong> utilizing advanced risk models for cloud solutions with dynamic asset assessment and environmental adaptation</li>
+                            <li><strong>Integrated 23 global cybersecurity frameworks</strong> with NIST alignment, enabling seamless adaptation to evolving regulatory requirements including financial services compliance</li>
+                            <li><strong>Authored IT Auditing: Using Controls to Protect Information Assets</strong> 3rd Ed. (McGraw-Hill 2005-2019)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="experience-title">
+                            <h3>Cloud Cybersecurity Strategy and Technical Solutions Architect</h3>
+                            <div class="company-info">ORACLE CLOUD</div>
+                            <div class="experience-location">Dallas, TX</div>
+                        </div>
+                        <div class="experience-date">November 2017 – November 2018</div>
+                    </div>
+                    <div class="experience-content">
+                        <ul>
+                            <li><strong>Led security risk assessment and vulnerability management</strong> programs for Oracle Cloud Infrastructure (OCI) and Oracle Cloud Computing (OCC) serving enterprise financial services customers</li>
+                            <li><strong>Delivered strategic recommendations</strong> for cloud security enhancements, threat management optimization, and incident response process improvements</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="experience-title">
+                            <h3>Risk Management and Assurance Senior Consultant</h3>
+                            <div class="company-info">AMAZON WEB SERVICES</div>
+                            <div class="experience-location">Dallas, TX</div>
+                        </div>
+                        <div class="experience-date">November 2016 – November 2017</div>
+                    </div>
+                    <div class="experience-content">
+                        <ul>
+                            <li><strong>Delivered comprehensive training and advisory services</strong> to AWS customers including Fortune 100 financial services institutions on cloud security best practices, regulatory compliance, and risk management</li>
+                            <li><strong>Executed post-breach security assessments and incident response</strong> for high-profile clients</li>
+                            <li><strong>Implemented security frameworks</strong> focusing on comprehensive risk mitigation for regulated industries</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="experience-title">
+                            <h3>Global Strategist for Product Compliance and Cybersecurity Solutions</h3>
+                            <div class="company-info">VMWARE</div>
+                            <div class="experience-location">Dallas, TX</div>
+                        </div>
+                        <div class="experience-date">August 2015 - November 2016</div>
+                    </div>
+                    <div class="experience-content">
+                        <ul>
+                            <li><strong>Secured $10M in federal funding</strong> through collaboration with Intel, VCE, Coalfire, HyTrust, and McAfee to lead strategic planning and implementation of FedRAMP Moderate compliant infrastructure within the NIST National Cybersecurity Center of Excellence (NCCoE)</li>
+                            <li><strong>Interfaced with clients as SME</strong> in Cloud Security, Compliance, Access Controls, Encryption, Endpoint Security, Monitoring, Configuration Management, Vulnerability Management, and Firmware Integrity</li>
+                            <li><strong>Spearheaded development and publication</strong> of comprehensive guidance, creating Product Applicability Guides for key federal regulations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="experience-title">
+                            <h3>Product Security and Compliance</h3>
+                            <div class="company-info">VCE</div>
+                            <div class="experience-location">Dallas, TX</div>
+                        </div>
+                        <div class="experience-date">February 2011 - July 2015</div>
+                    </div>
+                    <div class="experience-content">
+                        <ul>
+                            <li><strong>Designed and product managed secure and compliance infrastructure</strong> using DISA STIG CAT 2 baselines and FISMA, FedRAMP, PCI-DSS, HIPAA, CESG, CJIS requirements across storage, network, compute, virtualization, and management infrastructure.</li>
+                            <li><strong>Led executive briefings and customer presentations</strong> as Cloud Security Subject Matter Expert (SME) spanning public sector (SLED/GOV/DOD/IC), financial services, manufacturing, Cloud Service Providers (CSPs), and System Integrators/Service Organizations (SI/SO)</li>
+                            <li><strong>Instrumental in collaborative initiatives resulting in over $700M in tracked revenue</strong>, demonstrating ability to effectively engage and influence key stakeholders</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="early-career">
+                    <h3>Early Career</h3>
+                    <ul>
+                        <li><strong>Accudata Systems</strong> (2009-2010): Developed and delivered SOWs for PCI, HIPAA, and FISMA assessments, integrating RSA and Vormetric technologies to enhance enterprise cybersecurity solutions.</li>
+                        <li><strong>ForeScout Technologies</strong> (2006-2008): Built Professional Services Organization, managing global accounts to drive technical sales cycles for cybersecurity solutions.</li>
+                        <li><strong>Texas Instruments</strong> (2001-2006): Pioneered hardware-based mobile security model, creating a new market for mobile devices and conducted audit assessments of multiple data systems and entity level controls.</li>
+                        <li><strong>United States Navy</strong> (1991-1999): Led nuclear propulsion operations on USS Nebraska, ensuring compliance and precision in high-stakes, regulated environments.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section id="education">
+                <h2>Education</h2>
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <h3>Master of Business Administration, Information Security</h3>
+                        <p>University of Texas at Austin</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>Bachelor of Science, Nuclear Engineering Technologies</h3>
+                        <p>Thomas Edison State College</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certifications -->
+            <section id="certifications">
+                <h2>Certifications</h2>
+                <div class="certifications-list">
+                    <div class="certification-item">
+                        Certified Information Systems Security Professional (CISSP)
+                    </div>
+                    <div class="certification-item">
+                        Certified Information Systems Auditor (CISA)
+                    </div>
+                    <div class="certification-item">
+                        Certified Chief Information Security Officer (CCISO)
+                    </div>
+                    <div class="certification-item">
+                        PCI Internal Security Assessor (PCI-ISA)
+                    </div>
+                    <div class="certification-item">
+                        AWS Certified Cloud Practitioner (AWS-CCP)
+                    </div>
+                    <div class="certification-item">
+                        Certificate of Cloud Security Knowledge (CCSK)
+                    </div>
+                </div>
+            </section>
+
+            <!-- Thought Leadership -->
+            <section id="leadership">
+                <h2>Thought Leadership</h2>
+                <ul class="leadership-list">
+                    <li><strong>Amazon Author:</strong> <em>Hacking Exposed: Computer Forensics</em> and <em>IT Auditing: Using Controls to Protect Information Assets</em> (McGraw-Hill) <a href="https://www.amazon.com/author/chrisdavis" target="_blank">https://www.amazon.com/author/chrisdavis</a></li>
+                    <li><strong>Blog:</strong> articles on compliance, audit readiness, and governance best practices <a href="https://www.cloudauditcontrols.com" target="_blank">https://www.cloudauditcontrols.com</a></li>
+                    <li><strong>Free materials:</strong> free compliance and governance resources <a href="https://github.com/davischr2/Cloud-Documents" target="_blank">https://github.com/davischr2/Cloud-Documents</a></li>
+                    <li><strong>Speaker</strong> at RSA, BlackHat, VMworld, CSA, SANS, ISACA chapters</li>
+                    <li><strong>Adjunct Professor,</strong> 10 years teaching cybersecurity, auditing, and risk management</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const navHeight = document.querySelector('nav').offsetHeight;
+                    const targetPosition = target.offsetTop - navHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add active state to navigation based on scroll position
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            const navHeight = document.querySelector('nav').offsetHeight;
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - navHeight - 100;
+                if (window.pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.opacity = '1';
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.

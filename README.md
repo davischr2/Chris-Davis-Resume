@@ -40,7 +40,7 @@ Chris Davis is a distinguished cybersecurity professional with over two decades 
 
 ---
 
-## 📚 **Published Author - 11+ Books**
+## 📚 **Published Author - 13 Books**
 
 ### **Primary Author (6 Books)**
 1. **IT Auditing: Using Controls to Protect Information Assets, 3rd Ed.** - McGraw-Hill, 2019
@@ -126,7 +126,6 @@ Chris Davis is a distinguished cybersecurity professional with over two decades 
 - **Location:** Prosper, Texas
 - **LinkedIn:** [linkedin.com/in/christopherdavis](https://www.linkedin.com/in/christopherdavis)
 - **Professional Blog:** [cloudauditcontrols.com](https://www.cloudauditcontrols.com)
-- **Technical Blog:** [securethebits.com](https://www.securethebits.com)
 - **Amazon Author Page:** [amazon.com/author/chrisdavis](https://www.amazon.com/author/chrisdavis)
 
 ---

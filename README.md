@@ -3,7 +3,7 @@
 **Principal Cloud Security Researcher at Intel Tiber AI Cloud**  
 **MBA, CISSP | Author of 11+ Cybersecurity Books | 20+ Years Experience**
 
-## 🌟 **Live Portfolio**
+## 🌟 **Live Resume**
 **Visit: [https://davischr2.github.io/Chris-Davis-Resume/](https://davischr2.github.io/Chris-Davis-Resume/)**
 
 ---
